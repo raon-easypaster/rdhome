@@ -1,0 +1,415 @@
+/* 기본 설정 */
+:root {
+    /* 그린 네이처 테마 색상 */
+    --primary-color: #2E7D32;    /* 짙은 숲 초록 */
+    --primary-light: #4CAF50;    /* 밝은 초록 */
+    --secondary-color: #8D6E63;  /* 나무 갈색 (포인트) */
+    --accent-color: #FFB74D;     /* 따뜻한 오렌지 */
+    
+    --bg-light: #F1F8E9;         /* 아주 연한 연두색 배경 */
+    --bg-white: #FFFFFF;
+    
+    --text-dark: #1B331B;        /* 짙은 녹색 텍스트 */
+    --text-light: #556B55;       /* 중간 톤 텍스트 */
+    
+    --shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+    --card-radius: 24px;         /* 둥근 모서리 강조 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', 'Noto Sans KR', -apple-system, sans-serif;
+    line-height: 1.7;
+    font-size: 18px; /* 가독성을 위해 기본 폰트 크기 증가 */
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 헤더 & 네비게이션 */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo .tagline {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-light);
+}
+
+/* 햄버거 메뉴 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* 히어로 섹션 (수정됨) */
+.hero {
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+    color: var(--bg-white);
+    padding: 80px 20px 60px;
+    text-align: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* ★★★ 핵심 변경: 벤토 그리드 메뉴 (카드형 메뉴) ★★★ */
+.bento-menu-section {
+    padding: 0 20px 60px;
+    margin-top: -40px; /* 히어로 섹션과 살짝 겹치게 */
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 기본 3열 */
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 카드 공통 스타일 */
+.bento-card {
+    border-radius: var(--card-radius);
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.card-desc {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.plus-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+/* 각 카드별 색상 (파스텔톤 적용) */
+.card-1 { background-color: #E8F5E9; color: #1B5E20; } /* 교회소개: 연한 초록 */
+.card-2 { background-color: #FFF3E0; color: #E65100; } /* 예배안내: 연한 오렌지 */
+.card-3 { background-color: #E3F2FD; color: #0D47A1; } /* 말씀: 연한 파랑 */
+.card-4 { background-color: #F3E5F5; color: #4A148C; } /* 오시는길: 연한 보라 */
+.card-5 { background-color: #FFEBEE; color: #B71C1C; } /* 유튜브: 연한 빨강 */
+.card-6 { background-color: #FFFDE7; color: #F57F17; } /* 소식: 연한 노랑 */
+
+/* 큰 카드 (2칸 차지) */
+.card-large {
+    grid-column: span 2;
+}
+.card-tall {
+    grid-row: span 2;
+}
+
+
+/* 섹션 공통 스타일 */
+.section {
+    padding: 100px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3.5rem;
+    font-weight: 800;
+    position: relative;
+}
+
+.section-title::after {
+    content: '🌿';
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* 콘텐츠 스타일링 (가독성 강화) */
+.about-text h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-item {
+    background: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.value-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.pastor-quote {
+    background: #E8F5E9;
+    padding: 3rem;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-color);
+    margin: 3rem 0;
+}
+
+/* 예배 카드 스타일 */
+.worship-info {
+    gap: 2.5rem;
+}
+
+.worship-card {
+    background: var(--bg-white);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.worship-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-5px);
+}
+
+.worship-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.worship-card .time {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    background: #E8F5E9;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* 유튜브 그리드 */
+.youtube-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.youtube-info {
+    padding: 2rem;
+    background: var(--bg-white);
+}
+
+.youtube-info h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 오시는 길 */
+.contact-content {
+    background: var(--bg-white);
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.info-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item strong {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.info-item p {
+    font-size: 1.2rem;
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* 푸터 */
+footer {
+    background: #1B331B;
+    color: #fff;
+    padding: 5rem 20px 2rem;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.footer-links a {
+    font-size: 1.1rem;
+}
+
+/* 반응형 설정 */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card-large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: var(--bg-white);
+        width: 100%;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .hamburger {
+        display: flex;
+    }
+    
+    .bento-grid {
+        grid-template-columns: 1fr; /* 모바일은 1열 */
+    }
+    .card-large, .card-tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+}

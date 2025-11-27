@@ -6,9 +6,8 @@
     <title>라온동행교회 - 부천</title>
     <meta name="description" content="부천 라온동행교회 - 즐거운 동행, 함께하는 신앙">
     
-    <!-- 폰트 로드 (가독성 좋은 Pretendard 폰트) -->
+    <!-- 폰트 및 스타일 -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
-    <!-- 스타일시트 연결 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,14 +19,12 @@
                     <h1>🌿 라온동행교회</h1>
                     <p class="tagline">즐거운 동행, 행복한 신앙생활</p>
                 </div>
-                <!-- 데스크탑 메뉴 -->
                 <ul class="nav-menu">
                     <li><a href="#about">교회소개</a></li>
                     <li><a href="#worship">예배안내</a></li>
                     <li><a href="#sermon">설교말씀</a></li>
                     <li><a href="#contact">오시는길</a></li>
                 </ul>
-                <!-- 모바일 햄버거 버튼 -->
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -37,18 +34,17 @@
         </nav>
     </header>
 
-    <!-- 메인 히어로 섹션 -->
+    <!-- [수정 1 반영] 메인 히어로 섹션 (높이 줄어듦) -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h2>환영합니다!</h2>
-            <p class="hero-subtitle">하나님과, 이웃과, 세상과<br>즐겁게 동행하는 라온동행교회입니다.</p>
+            <p class="hero-subtitle">하나님과, 이웃과, 세상과 즐겁게 동행하는 라온동행교회입니다.</p>
         </div>
     </section>
 
-    <!-- ★ 벤토 그리드 메뉴 (네모난 박스 메뉴) ★ -->
+    <!-- 벤토 그리드 메뉴 -->
     <section class="bento-menu-section">
         <div class="bento-grid">
-            <!-- 1. 교회소개 (큰 카드) -->
             <a href="#about" class="bento-card card-1 card-large">
                 <span class="plus-icon">➕</span>
                 <div class="card-text">
@@ -58,7 +54,6 @@
                 <div class="card-icon">💒</div>
             </a>
 
-            <!-- 2. 예배안내 -->
             <a href="#worship" class="bento-card card-2">
                 <span class="plus-icon">➕</span>
                 <div class="card-icon">🙏</div>
@@ -68,7 +63,6 @@
                 </div>
             </a>
 
-            <!-- 3. 설교말씀 -->
             <a href="#sermon" class="bento-card card-3">
                 <span class="plus-icon">➕</span>
                 <div class="card-icon">📖</div>
@@ -78,7 +72,6 @@
                 </div>
             </a>
 
-            <!-- 4. 유튜브 채널 (요청하신 링크 적용됨) -->
             <a href="https://youtube.com/playlist?list=PLhgg9YNNliNSEfC2l7acPQ29gBY-xvJxk&si=jWJCBzWqR9T02LYx" target="_blank" class="bento-card card-5">
                 <span class="plus-icon">↗</span>
                 <div class="card-icon">📺</div>
@@ -88,7 +81,6 @@
                 </div>
             </a>
 
-            <!-- 5. 오시는 길 (큰 카드) -->
             <a href="#contact" class="bento-card card-4 card-large">
                 <span class="plus-icon">➕</span>
                 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
@@ -132,11 +124,9 @@
                 </div>
             </div>
             
-            <!-- 갤러리 -->
             <div style="margin-top: 5rem;">
                 <h3 style="text-align: center; font-size: 2rem; color: var(--primary-color); margin-bottom: 2rem;">함께하는 기쁨</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <!-- 이미지 파일명이 맞는지 확인해주세요 -->
                     <img src="church-photo1.jpg" alt="교회 활동 사진1" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow); object-fit: cover;">
                     <img src="church-photo2.jpg" alt="교회 활동 사진2" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow); object-fit: cover;">
                 </div>
@@ -144,10 +134,11 @@
         </div>
     </section>
 
-    <!-- 예배 안내 -->
+    <!-- [수정 2 반영] 예배 안내 (좌우 배열) -->
     <section id="worship" class="section worship" style="background-color: #E8F5E9;">
         <div class="container">
             <h2 class="section-title">예배 시간</h2>
+            <!-- CSS에서 grid-template-columns: 1fr 1fr; 로 설정하여 좌우 배치됨 -->
             <div class="worship-info">
                 <div class="worship-card">
                     <span style="font-size: 3rem;">☀️</span>
@@ -168,42 +159,61 @@
         </div>
     </section>
 
-    <!-- 메시지 (유튜브 재생목록 적용됨) -->
+    <!-- [수정 4 반영] 메시지 (유튜브 2개 배치) -->
     <section id="sermon" class="section sermon">
         <div class="container">
             <h2 class="section-title">말씀 영상</h2>
             <div class="sermon-content">
                 <div class="youtube-grid">
+                    <!-- 1. 기존 재생목록 -->
                     <div class="youtube-item">
                         <div class="youtube-video">
-                            <!-- 재생목록이 플레이어 안에서 바로 실행되도록 임베드 주소 수정됨 -->
                             <iframe 
                                 src="https://www.youtube.com/embed/videoseries?list=PLhgg9YNNliNSEfC2l7acPQ29gBY-xvJxk" 
-                                title="라온동행교회 설교 재생목록" 
+                                title="설교 재생목록" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                             </iframe>
                         </div>
                         <div class="youtube-info">
-                            <h4>주일 설교 말씀 (재생목록)</h4>
-                            <p class="youtube-desc">라온동행교회의 설교 시리즈를 연속으로 시청하실 수 있습니다.</p>
+                            <h4>주일 설교 말씀</h4>
+                            <p class="youtube-desc">라온동행교회의 주일 설교 시리즈</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. 추가된 재생목록 -->
+                    <div class="youtube-item">
+                        <div class="youtube-video">
+                            <iframe 
+                                src="https://www.youtube.com/embed/videoseries?list=PLhgg9YNNliNRMWtUJL1Af6fQNsDO99RrB" 
+                                title="특별 영상 재생목록" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="youtube-info">
+                            <h4>특별 영상 모음</h4>
+                            <p class="youtube-desc">행사 및 특별집회 영상입니다.</p>
                         </div>
                     </div>
                 </div>
+                
                 <div style="text-align: center; margin-top: 2rem;">
-                    <a href="https://youtube.com/playlist?list=PLhgg9YNNliNSEfC2l7acPQ29gBY-xvJxk&si=jWJCBzWqR9T02LYx" target="_blank" class="btn btn-primary">유튜브에서 전체보기 →</a>
+                    <a href="https://www.youtube.com/@라온동행교회" target="_blank" class="btn btn-primary">유튜브 채널 바로가기 →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 오시는 길 -->
+    <!-- [수정 3 반영] 오시는 길 (2행 2열 배치) -->
     <section id="contact" class="section contact" style="background-color: #FFF3E0;">
         <div class="container">
             <h2 class="section-title">오시는 길</h2>
             <div class="contact-content">
                 <div class="contact-info">
+                    <!-- 2열 그리드로 변경됨 -->
                     <div class="info-items">
                         <div class="info-item">
                             <strong>📍 주소</strong>
@@ -219,7 +229,7 @@
                         </div>
                         <div class="info-item">
                              <strong>📱 소셜미디어</strong>
-                             <div class="social-links" style="margin-top: 10px;">
+                             <div class="social-links">
                                 <a href="https://www.instagram.com/raon_donghang" target="_blank" class="social-link">Instagram</a>
                                 <a href="https://www.facebook.com/raondonghang" target="_blank" class="social-link">Facebook</a>
                              </div>
@@ -260,7 +270,6 @@
         </div>
     </footer>
 
-    <!-- 자바스크립트 연결 -->
     <script src="script.js"></script>
 </body>
 </html>

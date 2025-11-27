@@ -6,7 +6,6 @@
     <title>라온동행교회 - 부천</title>
     <meta name="description" content="부천 라온동행교회 - 즐거운 동행, 함께하는 신앙">
     
-    <!-- 폰트 및 스타일 -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -34,7 +33,7 @@
         </nav>
     </header>
 
-    <!-- [수정 1 반영] 메인 히어로 섹션 (높이 줄어듦) -->
+    <!-- 히어로 섹션 -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h2>환영합니다!</h2>
@@ -45,6 +44,7 @@
     <!-- 벤토 그리드 메뉴 -->
     <section class="bento-menu-section">
         <div class="bento-grid">
+            <!-- Row 1: 교회소개(2칸) + 예배안내(1칸) -->
             <a href="#about" class="bento-card card-1 card-large">
                 <span class="plus-icon">➕</span>
                 <div class="card-text">
@@ -63,12 +63,13 @@
                 </div>
             </a>
 
+            <!-- Row 2: 설교(1칸) + 유튜브(1칸) + 오시는길(1칸) -->
             <a href="#sermon" class="bento-card card-3">
                 <span class="plus-icon">➕</span>
                 <div class="card-icon">📖</div>
                 <div class="card-text">
                     <h3 class="card-title">설교 말씀</h3>
-                    <p class="card-desc">지난주 메시지 다시보기</p>
+                    <p class="card-desc">지난주 메시지</p>
                 </div>
             </a>
 
@@ -77,18 +78,17 @@
                 <div class="card-icon">📺</div>
                 <div class="card-text">
                     <h3 class="card-title">YouTube</h3>
-                    <p class="card-desc">설교 재생목록 보러가기</p>
+                    <p class="card-desc">영상 바로가기</p>
                 </div>
             </a>
 
-            <a href="#contact" class="bento-card card-4 card-large">
+            <!-- [수정 2] 오시는 길 (크기 축소 및 위치 변경) -->
+            <a href="#contact" class="bento-card card-4">
                 <span class="plus-icon">➕</span>
-                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                    <div class="card-text">
-                        <h3 class="card-title">오시는 길</h3>
-                        <p class="card-desc">부천 소사로 203 (카페 라온트리)</p>
-                    </div>
-                    <div class="card-icon">🗺️</div>
+                <div class="card-icon">🗺️</div>
+                <div class="card-text">
+                    <h3 class="card-title">오시는 길</h3>
+                    <p class="card-desc">카페 라온트리 2층</p>
                 </div>
             </a>
         </div>
@@ -134,11 +134,10 @@
         </div>
     </section>
 
-    <!-- [수정 2 반영] 예배 안내 (좌우 배열) -->
+    <!-- 예배 안내 -->
     <section id="worship" class="section worship" style="background-color: #E8F5E9;">
         <div class="container">
             <h2 class="section-title">예배 시간</h2>
-            <!-- CSS에서 grid-template-columns: 1fr 1fr; 로 설정하여 좌우 배치됨 -->
             <div class="worship-info">
                 <div class="worship-card">
                     <span style="font-size: 3rem;">☀️</span>
@@ -159,13 +158,12 @@
         </div>
     </section>
 
-    <!-- [수정 4 반영] 메시지 (유튜브 2개 배치) -->
+    <!-- 메시지 -->
     <section id="sermon" class="section sermon">
         <div class="container">
             <h2 class="section-title">말씀 영상</h2>
             <div class="sermon-content">
                 <div class="youtube-grid">
-                    <!-- 1. 기존 재생목록 -->
                     <div class="youtube-item">
                         <div class="youtube-video">
                             <iframe 
@@ -182,7 +180,6 @@
                         </div>
                     </div>
 
-                    <!-- 2. 추가된 재생목록 -->
                     <div class="youtube-item">
                         <div class="youtube-video">
                             <iframe 
@@ -207,13 +204,12 @@
         </div>
     </section>
 
-    <!-- [수정 3 반영] 오시는 길 (2행 2열 배치) -->
+    <!-- 오시는 길 -->
     <section id="contact" class="section contact" style="background-color: #FFF3E0;">
         <div class="container">
             <h2 class="section-title">오시는 길</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <!-- 2열 그리드로 변경됨 -->
                     <div class="info-items">
                         <div class="info-item">
                             <strong>📍 주소</strong>
@@ -229,9 +225,18 @@
                         </div>
                         <div class="info-item">
                              <strong>📱 소셜미디어</strong>
+                             <!-- [수정 1] 텍스트 대신 SVG 아이콘 적용 -->
                              <div class="social-links">
-                                <a href="https://www.instagram.com/raon_donghang" target="_blank" class="social-link">Instagram</a>
-                                <a href="https://www.facebook.com/raondonghang" target="_blank" class="social-link">Facebook</a>
+                                <a href="https://www.instagram.com/raon_donghang" target="_blank" class="social-link" title="인스타그램">
+                                    <svg class="social-icon" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.facebook.com/raondonghang" target="_blank" class="social-link" title="페이스북">
+                                    <svg class="social-icon" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </a>
                              </div>
                         </div>
                     </div>

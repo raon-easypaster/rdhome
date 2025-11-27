@@ -6,8 +6,9 @@
     <title>라온동행교회 - 부천</title>
     <meta name="description" content="부천 라온동행교회 - 즐거운 동행, 함께하는 신앙">
     
-    <!-- 폰트 로드 (Pretendard) -->
+    <!-- 폰트 로드 (가독성 좋은 Pretendard 폰트) -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <!-- 스타일시트 연결 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,13 +20,14 @@
                     <h1>🌿 라온동행교회</h1>
                     <p class="tagline">즐거운 동행, 행복한 신앙생활</p>
                 </div>
-                <!-- 데스크탑 메뉴 (간소화) -->
+                <!-- 데스크탑 메뉴 -->
                 <ul class="nav-menu">
                     <li><a href="#about">교회소개</a></li>
                     <li><a href="#worship">예배안내</a></li>
                     <li><a href="#sermon">설교말씀</a></li>
                     <li><a href="#contact">오시는길</a></li>
                 </ul>
+                <!-- 모바일 햄버거 버튼 -->
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -43,7 +45,7 @@
         </div>
     </section>
 
-    <!-- ★ 핵심 변경: 벤토 그리드 메뉴 (이미지 스타일 메뉴) ★ -->
+    <!-- ★ 벤토 그리드 메뉴 (네모난 박스 메뉴) ★ -->
     <section class="bento-menu-section">
         <div class="bento-grid">
             <!-- 1. 교회소개 (큰 카드) -->
@@ -76,13 +78,13 @@
                 </div>
             </a>
 
-            <!-- 4. 유튜브 채널 -->
-            <a href="https://www.youtube.com/@라온동행교회" target="_blank" class="bento-card card-5">
+            <!-- 4. 유튜브 채널 (요청하신 링크 적용됨) -->
+            <a href="https://youtube.com/playlist?list=PLhgg9YNNliNSEfC2l7acPQ29gBY-xvJxk&si=jWJCBzWqR9T02LYx" target="_blank" class="bento-card card-5">
                 <span class="plus-icon">↗</span>
                 <div class="card-icon">📺</div>
                 <div class="card-text">
                     <h3 class="card-title">YouTube</h3>
-                    <p class="card-desc">영상 콘텐츠 보러가기</p>
+                    <p class="card-desc">설교 재생목록 보러가기</p>
                 </div>
             </a>
 
@@ -100,7 +102,7 @@
         </div>
     </section>
 
-    <!-- 교회 소개 내용 -->
+    <!-- 교회 소개 -->
     <section id="about" class="section about">
         <div class="container">
             <h2 class="section-title">교회 소개</h2>
@@ -130,12 +132,13 @@
                 </div>
             </div>
             
-            <!-- 갤러리 (스타일 개선) -->
+            <!-- 갤러리 -->
             <div style="margin-top: 5rem;">
                 <h3 style="text-align: center; font-size: 2rem; color: var(--primary-color); margin-bottom: 2rem;">함께하는 기쁨</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <img src="church-photo1.jpg" alt="교회 활동 사진1" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow);">
-                    <img src="church-photo2.jpg" alt="교회 활동 사진2" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow);">
+                    <!-- 이미지 파일명이 맞는지 확인해주세요 -->
+                    <img src="church-photo1.jpg" alt="교회 활동 사진1" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow); object-fit: cover;">
+                    <img src="church-photo2.jpg" alt="교회 활동 사진2" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow); object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -165,7 +168,7 @@
         </div>
     </section>
 
-    <!-- 메시지 (유튜브) -->
+    <!-- 메시지 (유튜브 재생목록 적용됨) -->
     <section id="sermon" class="section sermon">
         <div class="container">
             <h2 class="section-title">말씀 영상</h2>
@@ -173,17 +176,23 @@
                 <div class="youtube-grid">
                     <div class="youtube-item">
                         <div class="youtube-video">
-                            <!-- 최신 영상 ID로 변경 필요 -->
-                            <iframe src="https://www.youtube.com/embed/GZPC_mOYnho" title="설교영상" frameborder="0" allowfullscreen></iframe>
+                            <!-- 재생목록이 플레이어 안에서 바로 실행되도록 임베드 주소 수정됨 -->
+                            <iframe 
+                                src="https://www.youtube.com/embed/videoseries?list=PLhgg9YNNliNSEfC2l7acPQ29gBY-xvJxk" 
+                                title="라온동행교회 설교 재생목록" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                         <div class="youtube-info">
-                            <h4>최신 설교 메시지</h4>
-                            <p class="youtube-date">2025.01.12</p>
+                            <h4>주일 설교 말씀 (재생목록)</h4>
+                            <p class="youtube-desc">라온동행교회의 설교 시리즈를 연속으로 시청하실 수 있습니다.</p>
                         </div>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 2rem;">
-                    <a href="https://www.youtube.com/@라온동행교회" target="_blank" class="btn btn-primary">유튜브 채널 바로가기 →</a>
+                    <a href="https://youtube.com/playlist?list=PLhgg9YNNliNSEfC2l7acPQ29gBY-xvJxk&si=jWJCBzWqR9T02LYx" target="_blank" class="btn btn-primary">유튜브에서 전체보기 →</a>
                 </div>
             </div>
         </div>
@@ -208,11 +217,18 @@
                             <strong>🚌 대중교통</strong>
                             <p>소사역(1호선/서해선) 도보 10분<br>소사초등학교 앞 하차</p>
                         </div>
+                        <div class="info-item">
+                             <strong>📱 소셜미디어</strong>
+                             <div class="social-links" style="margin-top: 10px;">
+                                <a href="https://www.instagram.com/raon_donghang" target="_blank" class="social-link">Instagram</a>
+                                <a href="https://www.facebook.com/raondonghang" target="_blank" class="social-link">Facebook</a>
+                             </div>
+                        </div>
                     </div>
                     
                     <div style="margin-top: 2rem; display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="https://map.naver.com/v5/search/경기도%20부천시%20소사로%20203" target="_blank" class="btn btn-primary" style="flex: 1;">네이버 지도</a>
-                        <a href="https://map.kakao.com/link/map/라온동행교회,37.4768,126.8053" target="_blank" class="btn btn-secondary" style="flex: 1;">카카오맵</a>
+                        <a href="https://map.naver.com/v5/search/경기도%20부천시%20소사로%20203" target="_blank" class="btn btn-primary" style="flex: 1; text-align: center;">네이버 지도</a>
+                        <a href="https://map.kakao.com/link/map/라온동행교회,37.4768,126.8053" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">카카오맵</a>
                     </div>
                 </div>
                 
@@ -234,15 +250,17 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <h3>라온동행교회</h3>
-                    <p style="opacity: 0.7;">기독교대한성결교회</p>
+                    <p style="opacity: 0.8; margin-bottom: 0;">기독교대한성결교회</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem;">경기도 부천시 소사로 203 2층</p>
                 </div>
                 <div class="footer-bottom" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
-                    <p>&copy; 2025 Raon Donghang Church.</p>
+                    <p>&copy; 2025 Raon Donghang Church. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- 자바스크립트 연결 -->
     <script src="script.js"></script>
 </body>
 </html>
